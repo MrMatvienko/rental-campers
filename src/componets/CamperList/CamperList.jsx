@@ -1,30 +1,21 @@
-import React, { useState, useEffect } from "react";
-import CSS from "./CamperList.module.css";
-import { getAdvertList } from "../../API/api";
-import CamperItem from "./CamperItem/CamperItem";
+import React from 'react';
+import CSS from './CamperList.module.css';
 
-const CamperList = ({ toggleModal }) => {
-  const [camperData, setCamperData] = useState([]);
+import CamperItem from './CamperItem/CamperItem';
+import { useSelector } from 'react-redux';
+import { selectFavorites } from '../../redux/campers/selectors';
 
-  useEffect(() => {
-    const fetchCamperData = async () => {
-      try {
-        const data = await getAdvertList();
-        setCamperData(data);
-      } catch (error) {
-        console.error("Error fetching camper data:", error);
-      }
-    };
-    fetchCamperData();
-  }, []);
+const CamperList = ({ camperData, toggleModal }) => {
+  const favorites = useSelector(selectFavorites);
 
   return (
     <div className={CSS.camperList}>
       {camperData.length > 0 ? (
-        camperData.map((camper) => (
+        camperData.map(camper => (
           <CamperItem
             key={camper._id}
             camper={camper}
+            isFavorite={favorites.some(fav => fav._id === camper._id)}
             toggleModal={toggleModal}
           />
         ))
