@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/rental-campers/static/css/main.7acaea2f.css",
-    "main.js": "/rental-campers/static/js/main.07d3183d.js",
+    "main.js": "/rental-campers/static/js/main.68fffbc2.js",
     "index.html": "/rental-campers/index.html",
     "main.7acaea2f.css.map": "/rental-campers/static/css/main.7acaea2f.css.map",
-    "main.07d3183d.js.map": "/rental-campers/static/js/main.07d3183d.js.map"
+    "main.68fffbc2.js.map": "/rental-campers/static/js/main.68fffbc2.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.07d3183d.js"
+    "static/js/main.68fffbc2.js"
   ]
 }
