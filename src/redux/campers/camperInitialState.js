@@ -1,7 +1,7 @@
 export const camperInitialState = {
-  items: [],
+  camper: [],
   favorites: [],
   filter: null,
-  isLoading: false,
+  isLoading: true,
   error: null,
 };
