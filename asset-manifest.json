@@ -1,15 +1,27 @@
 {
   "files": {
-    "main.css": "/rental-campers/static/css/main.e9265c6c.css",
-    "main.js": "/rental-campers/static/js/main.66926e41.js",
+    "main.css": "/rental-campers/static/css/main.b63865a4.css",
+    "main.js": "/rental-campers/static/js/main.f0a43542.js",
+    "static/css/936.970bc8e2.chunk.css": "/rental-campers/static/css/936.970bc8e2.chunk.css",
+    "static/js/936.80be7c1a.chunk.js": "/rental-campers/static/js/936.80be7c1a.chunk.js",
+    "static/css/155.946f9b49.chunk.css": "/rental-campers/static/css/155.946f9b49.chunk.css",
+    "static/js/155.88e17c1c.chunk.js": "/rental-campers/static/js/155.88e17c1c.chunk.js",
+    "static/js/733.fdb8d457.chunk.js": "/rental-campers/static/js/733.fdb8d457.chunk.js",
+    "static/js/294.77026edd.chunk.js": "/rental-campers/static/js/294.77026edd.chunk.js",
     "static/media/TB_Van_18-1536x10241.jpgw3.jpg": "/rental-campers/static/media/TB_Van_18-1536x10241.jpgw3.3e92b81835f6fe9c5253.jpg",
     "static/media/sprite.svg": "/rental-campers/static/media/sprite.81d601b198a6faf2f2fc58c5a3edb5cd.svg",
     "index.html": "/rental-campers/index.html",
-    "main.e9265c6c.css.map": "/rental-campers/static/css/main.e9265c6c.css.map",
-    "main.66926e41.js.map": "/rental-campers/static/js/main.66926e41.js.map"
+    "main.b63865a4.css.map": "/rental-campers/static/css/main.b63865a4.css.map",
+    "main.f0a43542.js.map": "/rental-campers/static/js/main.f0a43542.js.map",
+    "936.970bc8e2.chunk.css.map": "/rental-campers/static/css/936.970bc8e2.chunk.css.map",
+    "936.80be7c1a.chunk.js.map": "/rental-campers/static/js/936.80be7c1a.chunk.js.map",
+    "155.946f9b49.chunk.css.map": "/rental-campers/static/css/155.946f9b49.chunk.css.map",
+    "155.88e17c1c.chunk.js.map": "/rental-campers/static/js/155.88e17c1c.chunk.js.map",
+    "733.fdb8d457.chunk.js.map": "/rental-campers/static/js/733.fdb8d457.chunk.js.map",
+    "294.77026edd.chunk.js.map": "/rental-campers/static/js/294.77026edd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e9265c6c.css",
-    "static/js/main.66926e41.js"
+    "static/css/main.b63865a4.css",
+    "static/js/main.f0a43542.js"
   ]
 }
