@@ -1,0 +1,6 @@
+.rentalContainer {
+  display: flex;
+  padding: 64px 64px 64px 64px;
+  justify-content: center;
+  gap: 64px;
+}

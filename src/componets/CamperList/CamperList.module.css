@@ -1,0 +1,5 @@
+.camperList {
+  width: 888px;
+  display: flex;
+  flex-direction: column;
+}
