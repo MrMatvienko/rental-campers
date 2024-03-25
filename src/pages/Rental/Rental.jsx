@@ -13,7 +13,6 @@ const Rental = () => {
   useEffect(() => {
     dispatch(fetchCamperData());
   }, [dispatch]);
-  console.log(camperData);
 
   const [showModal, setShowModal] = useState(false);
   const [selectedCamper, setSelectedCamper] = useState(null);

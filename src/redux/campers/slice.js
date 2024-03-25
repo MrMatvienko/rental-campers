@@ -15,6 +15,24 @@ const camperSlice = createSlice({
     setCamperData: (state, action) => {
       state.camperData = action.payload;
     },
+    addToFavorites(state, action) {
+      state.favorites.push(action.payload);
+      localStorage.setItem('favorites', JSON.stringify(state.favorites));
+    },
+    removeFromFavorites(state, action) {
+      state.favorites = state.favorites.filter(
+        camper => camper._id !== action.payload._id
+      );
+      localStorage.setItem('favorites', JSON.stringify(state.favorites));
+    },
+    loadFavoritesFromLocalStorage(state) {
+      const favoritesFromStorage = JSON.parse(
+        localStorage.getItem('favorites')
+      );
+      if (favoritesFromStorage) {
+        state.favorites = favoritesFromStorage;
+      }
+    },
   },
   extraReducers: builder => {
     builder
@@ -33,5 +51,10 @@ const camperSlice = createSlice({
       });
   },
 });
-
+export const {
+  setCamperData,
+  addToFavorites,
+  removeFromFavorites,
+  loadFavoritesFromLocalStorage,
+} = camperSlice.actions;
 export const camperReducer = camperSlice.reducer;

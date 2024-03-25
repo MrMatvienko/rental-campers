@@ -1,8 +1,15 @@
 import CSS from './CamperItem.module.css';
 import sprite from '../../../images/sprite.svg';
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  addToFavorites,
+  removeFromFavorites,
+} from '../../../redux/campers/slice';
 const CamperItem = ({ camper, toggleModal }) => {
   const [heartColor, setHeartColor] = useState('#FFFFFF');
+  const dispatch = useDispatch();
+  const favorites = useSelector(state => state.camper.favorites);
 
   const firstImage = camper.gallery[0];
   const text = camper.description.split(' ').slice(0, 11).join(' ');
@@ -12,13 +19,23 @@ const CamperItem = ({ camper, toggleModal }) => {
     if (savedHeartColor) {
       setHeartColor(savedHeartColor);
     }
-  }, [camper._id]);
+    const isFavorite = favorites.some(item => item._id === camper._id);
+    if (isFavorite) {
+      setHeartColor('#FF0000');
+    }
+  }, [camper._id, favorites]);
 
   const handleHeartClick = () => {
     const newColor = heartColor === '#FF0000' ? '#FFFFFF' : '#FF0000';
     setHeartColor(newColor);
     localStorage.setItem(`${camper._id}`, newColor);
+    if (newColor === '#FF0000') {
+      dispatch(addToFavorites(camper));
+    } else {
+      dispatch(removeFromFavorites(camper));
+    }
   };
+  const isFavorite = favorites.some(item => item._id === camper._id);
   return (
     <div className={CSS.itemContainer}>
       <img className={CSS.imageItem} src={firstImage} alt="Camper" />
@@ -30,7 +47,7 @@ const CamperItem = ({ camper, toggleModal }) => {
             <svg
               className={CSS.icon}
               onClick={handleHeartClick}
-              fill={heartColor}
+              fill={isFavorite ? '#FF0000' : '#FFFFFF'}
             >
               <use href={sprite + '#icon-heart'} />
             </svg>

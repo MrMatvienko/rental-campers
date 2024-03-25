@@ -1,4 +1,7 @@
-import { camperReducer } from '../redux/campers/slice';
+import {
+  camperReducer,
+  loadFavoritesFromLocalStorage,
+} from '../redux/campers/slice';
 import { configureStore } from '@reduxjs/toolkit';
 
 import {
@@ -22,5 +25,5 @@ export const store = configureStore({
       },
     }),
 });
-
+store.dispatch(loadFavoritesFromLocalStorage());
 export const persistor = persistStore(store);
