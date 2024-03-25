@@ -2,12 +2,29 @@ import React from 'react';
 import CSS from './CamperList.module.css';
 
 import CamperItem from './CamperItem/CamperItem';
+import { useSelector } from 'react-redux';
+import {
+  selectCamperData,
+  selectFilterData,
+} from '../../redux/campers/selectors';
 
-const CamperList = ({ camperData, toggleModal }) => {
+const CamperList = ({ toggleModal }) => {
+  const camperData = useSelector(selectCamperData);
+  const filters = useSelector(selectFilterData);
+
+  // Фільтруємо кемпери за вибраними фільтрами
+  const filteredCamperData = camperData.filter(camper => {
+    if (filters.length === 0) {
+      return true; // Якщо немає фільтрів, повертаємо всі кемпери
+    }
+    // Перевіряємо, чи містить кемпер обрані фільтри
+    return filters.every(filter => camper.equipment.includes(filter));
+  });
+
   return (
     <div className={CSS.camperList}>
-      {camperData.length > 0 ? (
-        camperData.map(camper => (
+      {filteredCamperData.length > 0 ? (
+        filteredCamperData.map(camper => (
           <CamperItem
             key={camper._id}
             camper={camper}

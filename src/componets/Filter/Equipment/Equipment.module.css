@@ -31,6 +31,10 @@
   border-radius: 10px;
   height: 95px;
   width: calc((100% - 30px) / 3);
+  cursor: pointer;
+}
+.equipmentItem:hover {
+  border: 1px solid var(--button);
 }
 .textIcon {
   font-weight: 500;

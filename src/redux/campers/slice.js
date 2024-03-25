@@ -4,6 +4,7 @@ import { fetchCamperData } from './operations';
 const initialState = {
   camperData: [],
   favorites: [],
+  filters: [],
   isLoading: false,
   error: null,
 };
@@ -33,17 +34,27 @@ const camperSlice = createSlice({
         state.favorites = favoritesFromStorage;
       }
     },
+    setFilters(state, action) {
+      if (Array.isArray(action.payload.filters)) {
+        state.filters = action.payload.filters;
+      } else {
+        console.error('Invalid filters payload:', action.payload);
+      }
+    },
   },
   extraReducers: builder => {
     builder
       .addCase(fetchCamperData.pending, state => {
         state.isLoading = true;
         state.error = null;
+        state.camperData = [];
+        setFilters(state);
       })
       .addCase(fetchCamperData.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.camperData = action.payload;
+        setFilters(state);
       })
       .addCase(fetchCamperData.rejected, (state, action) => {
         state.isLoading = false;
@@ -51,10 +62,12 @@ const camperSlice = createSlice({
       });
   },
 });
+
 export const {
   setCamperData,
   addToFavorites,
   removeFromFavorites,
   loadFavoritesFromLocalStorage,
+  setFilters,
 } = camperSlice.actions;
 export const camperReducer = camperSlice.reducer;
