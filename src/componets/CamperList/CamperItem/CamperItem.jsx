@@ -54,8 +54,15 @@ const CamperItem = ({ camper, toggleModal }) => {
           </div>
         </div>
         <div className={CSS.info2}>
+          <svg
+            className={CSS.icon}
+            style={{ width: '14px', fill: 'var(--rating)' }}
+          >
+            <use href={sprite + '#icon-star'} />
+          </svg>
           <p>{camper.rating}</p>
-          <p>{camper.location}</p>
+          <p>({camper.reviews.length} Reviews)</p>
+          <p style={{ marginLeft: '16px' }}>{camper.location}</p>
         </div>
         <p className={CSS.description}>{text}...</p>
         <ul className={CSS.listDateils}>

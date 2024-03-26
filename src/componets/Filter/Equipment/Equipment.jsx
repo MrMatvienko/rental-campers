@@ -1,34 +1,42 @@
 import sprite from '../../../images/sprite.svg';
 import CSS from './Equipment.module.css';
 
-const equipmentItems = [
-  { name: 'AC', icon: 'icon-ac', text: 'AC' },
-  { name: 'Automatic', icon: 'icon-at', text: 'Automatic' },
-  { name: 'Kitchen', icon: 'icon-kitchen', text: 'Kitchen' },
-  { name: 'TV', icon: 'icon-tv', text: 'TV' },
-  { name: 'Shower/WC', icon: 'icon-route', text: 'Shower/WC' },
-];
-
 const Equipment = ({ handleFilterClick, selectedFilters }) => {
   return (
     <div className={CSS.equiContainer}>
+      <p>Filters</p>
       <h2 className={CSS.title}>Vehicle equipment</h2>
       <ul className={CSS.equipmentList}>
-        {equipmentItems.map(item => (
-          <li
-            type="radio"
-            key={item.name}
-            className={`${CSS.equipmentItem} ${
-              selectedFilters.includes(item.name) && CSS.selected
-            }`}
-            onClick={() => handleFilterClick(item.name)}
-          >
-            <svg className={CSS.icon}>
-              <use href={sprite + '#' + item.icon} />
-            </svg>
-            <p className={CSS.textIcon}>{item.text}</p>
-          </li>
-        ))}
+        <li className={CSS.equipmentItem}>
+          <svg className={CSS.icon}>
+            <use href={sprite + '#icon-ac'} />
+          </svg>
+          <p className={CSS.textIcon}>AC</p>
+        </li>
+        <li className={CSS.equipmentItem}>
+          <svg className={CSS.icon}>
+            <use href={sprite + '#icon-at'} />
+          </svg>
+          <p className={CSS.textIcon}>Automatic</p>
+        </li>
+        <li className={CSS.equipmentItem}>
+          <svg className={CSS.icon}>
+            <use href={sprite + '#icon-kitchen'} />
+          </svg>
+          <p className={CSS.textIcon}>Kitchen</p>
+        </li>
+        <li className={CSS.equipmentItem}>
+          <svg className={CSS.icon}>
+            <use href={sprite + '#icon-tv'} />
+          </svg>
+          <p className={CSS.textIcon}>TV</p>
+        </li>
+        <li className={CSS.equipmentItem}>
+          <svg className={CSS.icon}>
+            <use href={sprite + '#icon-route'} />
+          </svg>
+          <p className={CSS.textIcon}>Shower/WC</p>
+        </li>
       </ul>
     </div>
   );

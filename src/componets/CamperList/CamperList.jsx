@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CSS from './CamperList.module.css';
 
 import CamperItem from './CamperItem/CamperItem';
@@ -11,15 +11,20 @@ import {
 const CamperList = ({ toggleModal }) => {
   const camperData = useSelector(selectCamperData);
   const filters = useSelector(selectFilterData);
+  const [visibleCamperCount, setVisibleCamperCount] = useState(4);
 
-  // Фільтруємо кемпери за вибраними фільтрами
-  const filteredCamperData = camperData.filter(camper => {
-    if (filters.length === 0) {
-      return true; // Якщо немає фільтрів, повертаємо всі кемпери
-    }
-    // Перевіряємо, чи містить кемпер обрані фільтри
-    return filters.every(filter => camper.equipment.includes(filter));
-  });
+  const filteredCamperData = camperData
+    .filter(camper => {
+      if (filters.length === 0) {
+        return true;
+      }
+      return filters.every(filter => camper.equipment.includes(filter));
+    })
+    .slice(0, visibleCamperCount); // обмежуємо кількість відображених кемперів
+
+  const loadMoreCamper = () => {
+    setVisibleCamperCount(prevCount => prevCount + 4);
+  };
 
   return (
     <div className={CSS.camperList}>
@@ -33,6 +38,15 @@ const CamperList = ({ toggleModal }) => {
         ))
       ) : (
         <p>Loading...</p>
+      )}
+      {visibleCamperCount < camperData.length && (
+        <button
+          type="button"
+          className={CSS.buttonLoad}
+          onClick={loadMoreCamper}
+        >
+          Load more
+        </button>
       )}
     </div>
   );
