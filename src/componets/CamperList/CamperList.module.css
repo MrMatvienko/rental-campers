@@ -19,3 +19,8 @@
   background-color: transparent;
   cursor: pointer;
 }
+.buttonLoad:hover,
+.buttonLoad:focus {
+  border: 1px solid#f7dddd;
+  background-color: #f7dddd;
+}
