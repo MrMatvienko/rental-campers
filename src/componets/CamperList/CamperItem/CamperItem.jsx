@@ -103,7 +103,12 @@ const CamperItem = ({ camper, toggleModal }) => {
             </li>
           )}
           {camper.details.airConditioner === 1 && (
-            <li className={CSS.camperDetailsItem}>AC </li>
+            <li className={CSS.camperDetailsItem}>
+              <svg className={CSS.iconList}>
+                <use href={sprite + '#icon-ac'} />
+              </svg>
+              AC{' '}
+            </li>
           )}
         </ul>
         <button

@@ -2,7 +2,7 @@ import sprite from '../../../images/sprite.svg';
 import CSS from './Equipment.module.css';
 
 const equipmentItems = [
-  { name: 'AC', icon: 'icon-condishin', text: 'AC' },
+  { name: 'AC', icon: 'icon-ac', text: 'AC' },
   { name: 'Automatic', icon: 'icon-at', text: 'Automatic' },
   { name: 'Kitchen', icon: 'icon-kitchen', text: 'Kitchen' },
   { name: 'TV', icon: 'icon-tv', text: 'TV' },
