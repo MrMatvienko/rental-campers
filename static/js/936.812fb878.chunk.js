@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[936],{936:function(e,t,a){a.r(t),a.d(t,{default:function(){return o}});var r=a(87),s="Home_mainPages__slMea",l="Home_title__L087v",n="Home_rentalButton__-Jrtc",c=a(184),o=function(){return(0,c.jsxs)("div",{className:s,children:[(0,c.jsx)("h1",{className:l,children:"The largest selection of campers for travel"}),(0,c.jsx)(r.rU,{to:"/rental",className:n,children:"Rental"})]})}}}]);
-//# sourceMappingURL=936.812fb878.chunk.js.map
