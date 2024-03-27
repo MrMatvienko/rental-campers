@@ -24,6 +24,7 @@
   column-gap: 10px;
 }
 .equipmentItem {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,6 +35,19 @@
   width: calc((100% - 30px) / 3);
   cursor: pointer;
 }
+.labelCheckbox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.checkBox {
+  display: none;
+}
 .equipmentItem:hover {
   border: 1px solid var(--button);
 }
@@ -42,4 +56,20 @@
   font-size: 16px;
   line-height: 125%;
   text-align: center;
+}
+.equipmentItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+  height: 95px;
+  width: calc((100% - 30px) / 3);
+  cursor: pointer;
+}
+
+.checked {
+  border: 1px solid var(--button);
 }
