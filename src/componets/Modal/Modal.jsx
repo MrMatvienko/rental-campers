@@ -1,5 +1,5 @@
 import CSS from './Modal.module.css';
-import sprite from '../../images/sprite.svg';
+import sprite from '../../assets/images/sprite.svg';
 import { useEffect } from 'react';
 const Modal = ({ camper, onClose }) => {
   useEffect(() => {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import sprite from '../../../images/sprite.svg';
+import sprite from '../../../assets/images/sprite.svg';
 import CSS from './VehicleType.module.css';
 const vahicleTypeData = [
   { id: 1, icon: 'icon-camp1', text: 'Van' },

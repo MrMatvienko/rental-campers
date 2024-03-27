@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import sprite from '../../../images/sprite.svg';
+import sprite from '../../../assets/images/sprite.svg';
 import CSS from './Equipment.module.css';
 
 const equipmentData = [

@@ -7,6 +7,7 @@ import {
   selectCamperData,
   selectFilterData,
 } from '../../redux/campers/selectors';
+import Loader from 'componets/Loader/Loader';
 
 const CamperList = ({ toggleModal }) => {
   const camperData = useSelector(selectCamperData);
@@ -37,7 +38,7 @@ const CamperList = ({ toggleModal }) => {
           />
         ))
       ) : (
-        <p>Loading...</p>
+        <Loader />
       )}
       {visibleCamperCount < camperData.length && (
         <button

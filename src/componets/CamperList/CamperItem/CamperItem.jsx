@@ -1,5 +1,5 @@
 import CSS from './CamperItem.module.css';
-import sprite from '../../../images/sprite.svg';
+import sprite from '../../../assets/images/sprite.svg';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
