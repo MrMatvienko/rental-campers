@@ -1,6 +1,6 @@
 import Equipment from './Equipment/Equipment';
 import Location from './Location/Location';
-import VehicleTypeType from './VehicleType/VehicleType';
+import VehicleType from './VehicleType/VehicleType';
 import CSS from './Filter.module.css';
 import { useDispatch } from 'react-redux';
 import { setFilters } from '../../redux/campers/slice';
@@ -29,7 +29,7 @@ const Filter = () => {
         handleFilterClick={handleFilterClick}
         selectedFilters={selectedFilters}
       />
-      <VehicleTypeType />
+      <VehicleType />
       <button className={CSS.searchBtn} onClick={applyFilters}>
         Search
       </button>
