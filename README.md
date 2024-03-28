@@ -10,27 +10,25 @@ functionality and equipment.
 
 ## How to use
 
-1. Clone repository;
+1. Clone repository
 
 ```
 git clone https://github.com/MrMatvienko/rental-campers
-
 ```
 
-2. Navigate to the project directory;
+2. Navigate to the project directory
 
 ```
 cd rental-campers
-
 ```
 
-3. Install dependencies useing npm;
+3. Install dependencies useing npm
 
 ```
 npm install
 ```
 
-4. Start project;
+4. Start project
 
 ```
 npm start
