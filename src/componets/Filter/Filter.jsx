@@ -1,37 +1,15 @@
 import CSS from './Filter.module.css';
 import sprite from '../../assets/images/sprite.svg';
-import { useDispatch } from 'react-redux';
-import { setFilters } from '../../redux/campers/slice';
 import {
-  equipmentData,
-  locationData,
-  vahicleTypeData,
+  EQUIPMEN_TDATA,
+  LOCATION_DATA,
+  VACHICLE_DATA,
 } from '../../constants/index';
 import { useState } from 'react';
 
 const Filter = () => {
   const [checkedItems, setCheckedItems] = useState({});
-  const [selectedFilters, setSelectedFilters] = useState([]);
-  const dispatch = useDispatch();
 
-  const handleFilterClick = filter => {
-    const isSelected = selectedFilters.includes(filter);
-    if (isSelected) {
-      setSelectedFilters(selectedFilters.filter(item => item !== filter));
-    } else {
-      setSelectedFilters([...selectedFilters, filter]);
-    }
-  };
-
-  const applyFilters = () => {
-    dispatch(setFilters(selectedFilters));
-  };
-  const handleCheckboxChange = itemId => {
-    setCheckedItems(prevCheckedItems => ({
-      ...prevCheckedItems,
-      [itemId]: !prevCheckedItems[itemId],
-    }));
-  };
   const isItemChecked = itemId => checkedItems[itemId] ?? false;
 
   const handleRadioChange = itemId => {
@@ -42,37 +20,40 @@ const Filter = () => {
     <div className={CSS.filterContainer}>
       <div>
         <form id="locationForm">
-          Location
-          <label>
-            <select
-              placeholder="Location"
-              options={locationData}
-              color="var(--accent-red)"
-            />
-          </label>
+          <label htmlFor="location">Location</label>
+          <select
+            id="location"
+            name="location"
+            defaultValue=""
+            color="var(--accent-red)"
+          >
+            <option value="" disabled>
+              Location
+            </option>
+            {LOCATION_DATA.map(location => (
+              <option key={location.value} value={location.value}>
+                {location.label}
+              </option>
+            ))}
+          </select>
         </form>
       </div>
       <div className={CSS.equiContainer}>
         <p>Filters</p>
         <h2 className={CSS.titleType}>Vehicle equipment</h2>
         <ul className={CSS.equipmentList}>
-          {equipmentData.map(item => (
-            <li
-              key={item.id}
-              className={CSS.equipmentItem}
-              onClick={() => handleFilterClick(item)}
-            >
+          {EQUIPMEN_TDATA.map(filter => (
+            <li key={filter.name} className={CSS.equipmentItem}>
               <label className={CSS.labelCheckbox}>
                 <input
                   type="checkbox"
                   className={CSS.checkBox}
-                  checked={isItemChecked(item.id)}
-                  onChange={() => handleCheckboxChange(item.id)}
+                  checked={isItemChecked(filter.value)}
                 />
                 <svg className={CSS.icon}>
-                  <use href={`${sprite}#${item.icon}`} />
+                  <use href={`${sprite}#${filter.icon}`} />
                 </svg>
-                <p className={CSS.textIcon}>{item.text}</p>
+                <p className={CSS.textIcon}>{filter.text}</p>
               </label>
             </li>
           ))}
@@ -81,20 +62,16 @@ const Filter = () => {
       <div className={CSS.typeContainer}>
         <h2 className={CSS.title}>Vehicle type</h2>
         <ul className={CSS.typetList}>
-          {vahicleTypeData.map(item => (
-            <li
-              key={item.id}
-              className={CSS.typetItem}
-              onClick={() => handleFilterClick(item)}
-            >
+          {VACHICLE_DATA.map(item => (
+            <li key={item.name} className={CSS.typetItem}>
               <label>
                 <input
                   type="radio"
                   name="vehicleType"
                   className={CSS.radioBtn}
-                  value={item.id}
-                  checked={isItemChecked(item.id)}
-                  onChange={() => handleRadioChange(item.id)}
+                  value={item.name}
+                  checked={isItemChecked(item.value)}
+                  onChange={() => handleRadioChange(item.value)}
                 />
               </label>
               <svg className={CSS.iconType}>
@@ -105,9 +82,7 @@ const Filter = () => {
           ))}
         </ul>
       </div>
-      <button className={CSS.searchBtn} onClick={applyFilters}>
-        Search
-      </button>
+      <button className={CSS.searchBtn}>Search</button>
     </div>
   );
 };

@@ -34,13 +34,6 @@ const camperSlice = createSlice({
         state.favorites = favoritesFromStorage;
       }
     },
-    setFilters(state, action) {
-      if (Array.isArray(action.payload.filters)) {
-        state.filters = action.payload.filters;
-      } else {
-        console.error('Invalid filters payload:', action.payload);
-      }
-    },
   },
   extraReducers: builder => {
     builder
@@ -48,13 +41,11 @@ const camperSlice = createSlice({
         state.isLoading = true;
         state.error = null;
         state.camperData = [];
-        setFilters(state);
       })
       .addCase(fetchCamperData.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.camperData = action.payload;
-        setFilters(state);
       })
       .addCase(fetchCamperData.rejected, (state, action) => {
         state.isLoading = false;

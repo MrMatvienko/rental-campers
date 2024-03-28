@@ -1,23 +1,67 @@
-export const equipmentData = [
-  { id: 1, icon: 'icon-ac', text: 'AC' },
-  { id: 2, icon: 'icon-at', text: 'Automatic' },
-  { id: 3, icon: 'icon-kitchen', text: 'Kitchen' },
-  { id: 4, icon: 'icon-tv', text: 'TV' },
-  { id: 5, icon: 'icon-route', text: 'Shower/WC' },
+export const EQUIPMEN_TDATA = [
+  {
+    name: 'airConditioner',
+    icon: 'icon-ac',
+    text: 'AC',
+    value: 1,
+    nestedProperty: 'details.airConditioner',
+  },
+  {
+    name: 'transmission',
+    icon: 'icon-at',
+    text: 'Automatic',
+    value: 'automatic',
+  },
+  {
+    name: 'kitchen',
+    icon: 'icon-kitchen',
+    text: 'Kitchen',
+    value: 1,
+    nestedProperty: 'details.kitchen',
+  },
+  {
+    name: 'TV',
+    icon: 'icon-tv',
+    text: 'TV',
+    value: 1,
+    nestedProperty: 'details.TV',
+  },
+  {
+    name: 'shower',
+    icon: 'icon-route',
+    text: 'Shower/WC',
+    value: 1,
+    nestedProperty: 'details.shower',
+  },
 ];
 
-export const vahicleTypeData = [
-  { id: 1, icon: 'icon-camp1', text: 'Van' },
-  { id: 2, icon: 'icon-camp2', text: 'Fully Intedrated' },
-  { id: 3, icon: 'icon-camp3', text: 'Alcove' },
+export const VACHICLE_DATA = [
+  {
+    name: 'form',
+    icon: 'icon-camp1',
+    text: 'Van',
+    value: 'panelTruck',
+  },
+  {
+    name: 'form',
+    icon: 'icon-camp2',
+    text: 'Fully Intedrated',
+    value: 'fullyIntegrated',
+  },
+  {
+    name: 'form',
+    icon: 'icon-camp3',
+    text: 'Alcove',
+    value: 'alcove',
+  },
 ];
 
-export const locationData = [
-  { label: 'Kyiv', value: 'Ukraine, Kyiv' },
-  { label: 'Lviv', value: 'Ukraine, Lviv' },
-  { label: 'Odesa', value: 'Ukraine, Odesa' },
-  { label: 'Poltava', value: 'Ukraine, Poltava' },
-  { label: 'Dnipro', value: 'Ukraine, Dnipro' },
-  { label: 'Kharkiv', value: 'Ukraine, Kharkiv' },
-  { label: 'Sumy', value: 'Ukraine, Sumy' },
+export const LOCATION_DATA = [
+  { name: 'location', label: 'Kyiv', value: 'Ukraine, Kyiv' },
+  { name: 'location', label: 'Lviv', value: 'Ukraine, Lviv' },
+  { name: 'location', label: 'Odesa', value: 'Ukraine, Odesa' },
+  { name: 'location', label: 'Poltava', value: 'Ukraine, Poltava' },
+  { name: 'location', label: 'Dnipro', value: 'Ukraine, Dnipro' },
+  { name: 'location', label: 'Kharkiv', value: 'Ukraine, Kharkiv' },
+  { name: 'location', label: 'Sumy', value: 'Ukraine, Sumy' },
 ];

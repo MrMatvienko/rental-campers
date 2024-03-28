@@ -3,25 +3,14 @@ import CSS from './CamperList.module.css';
 
 import CamperItem from './CamperItem/CamperItem';
 import { useSelector } from 'react-redux';
-import {
-  selectCamperData,
-  selectFilterData,
-} from '../../redux/campers/selectors';
+import { selectCamperData } from '../../redux/campers/selectors';
 import Loader from 'componets/Loader/Loader';
 
 const CamperList = ({ toggleModal }) => {
   const camperData = useSelector(selectCamperData);
-  const filters = useSelector(selectFilterData);
   const [visibleCamperCount, setVisibleCamperCount] = useState(4);
 
-  const filteredCamperData = camperData
-    .filter(camper => {
-      if (filters.length === 0) {
-        return true;
-      }
-      return filters.every(filter => camper.equipment.includes(filter));
-    })
-    .slice(0, visibleCamperCount);
+  const favoritesCamperData = camperData.slice(0, visibleCamperCount);
 
   const loadMoreCamper = () => {
     setVisibleCamperCount(prevCount => prevCount + 4);
@@ -29,8 +18,8 @@ const CamperList = ({ toggleModal }) => {
 
   return (
     <div className={CSS.camperList}>
-      {filteredCamperData.length > 0 ? (
-        filteredCamperData.map(camper => (
+      {favoritesCamperData.length > 0 ? (
+        favoritesCamperData.map(camper => (
           <CamperItem
             key={camper._id}
             camper={camper}
