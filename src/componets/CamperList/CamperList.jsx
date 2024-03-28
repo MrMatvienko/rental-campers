@@ -21,7 +21,7 @@ const CamperList = ({ toggleModal }) => {
       }
       return filters.every(filter => camper.equipment.includes(filter));
     })
-    .slice(0, visibleCamperCount); // обмежуємо кількість відображених кемперів
+    .slice(0, visibleCamperCount);
 
   const loadMoreCamper = () => {
     setVisibleCamperCount(prevCount => prevCount + 4);
