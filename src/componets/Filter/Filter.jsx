@@ -1,19 +1,46 @@
 import CSS from './Filter.module.css';
 import sprite from '../../assets/images/sprite.svg';
 import {
-  EQUIPMEN_TDATA,
+  EQUIPMENT_DATA,
   LOCATION_DATA,
   VACHICLE_DATA,
 } from '../../constants/index';
 import { useState } from 'react';
 
-const Filter = () => {
-  const [checkedItems, setCheckedItems] = useState({});
+const Filter = ({ onFilter }) => {
+  const [selectedLocation, setSelectedLocation] = useState('');
+  const [selectedVehicleType, setSelectedVehicleType] = useState('');
+  const [selectedEquipmentType, setSelectedEquipmentType] = useState('');
 
-  const isItemChecked = itemId => checkedItems[itemId] ?? false;
+  const handleLocationChange = event => {
+    setSelectedLocation(event.target.value);
+  };
 
-  const handleRadioChange = itemId => {
-    setCheckedItems({ [itemId]: true });
+  const handleCheckboxChange = ({ target }) => {
+    const { name, checked } = target;
+    setSelectedEquipmentType(prevState => {
+      const updatedState = {
+        ...prevState,
+        [name]: checked,
+      };
+      console.log('Updated selectedEquipmentType:', updatedState);
+      return updatedState;
+    });
+  };
+
+  const handleRadioChange = value => {
+    setSelectedVehicleType(value);
+  };
+
+  const handleSearch = event => {
+    event.preventDefault();
+    onFilter(selectedLocation, selectedVehicleType, selectedEquipmentType);
+  };
+
+  const resetFilters = () => {
+    setSelectedLocation('');
+    setSelectedVehicleType('');
+    setSelectedEquipmentType({});
   };
 
   return (
@@ -22,16 +49,17 @@ const Filter = () => {
         <form id="locationForm">
           <label htmlFor="location">Location</label>
           <select
-            id="location"
-            name="location"
+            id={`location-selector`}
+            name={`location-field`}
             defaultValue=""
             color="var(--accent-red)"
+            onChange={handleLocationChange}
           >
             <option value="" disabled>
               Location
             </option>
-            {LOCATION_DATA.map(location => (
-              <option key={location.value} value={location.value}>
+            {LOCATION_DATA.map((location, index) => (
+              <option key={`${location.value}-${index}`} value={location.value}>
                 {location.label}
               </option>
             ))}
@@ -42,13 +70,15 @@ const Filter = () => {
         <p>Filters</p>
         <h2 className={CSS.titleType}>Vehicle equipment</h2>
         <ul className={CSS.equipmentList}>
-          {EQUIPMEN_TDATA.map(filter => (
-            <li key={filter.name} className={CSS.equipmentItem}>
+          {EQUIPMENT_DATA.map((filter, index) => (
+            <li key={`${filter.name}-${index}`} className={CSS.equipmentItem}>
               <label className={CSS.labelCheckbox}>
                 <input
                   type="checkbox"
+                  name={filter.text}
                   className={CSS.checkBox}
-                  checked={isItemChecked(filter.value)}
+                  checked={selectedEquipmentType[filter.text] || false}
+                  onChange={handleCheckboxChange}
                 />
                 <svg className={CSS.icon}>
                   <use href={`${sprite}#${filter.icon}`} />
@@ -62,15 +92,15 @@ const Filter = () => {
       <div className={CSS.typeContainer}>
         <h2 className={CSS.title}>Vehicle type</h2>
         <ul className={CSS.typetList}>
-          {VACHICLE_DATA.map(item => (
-            <li key={item.name} className={CSS.typetItem}>
+          {VACHICLE_DATA.map((item, index) => (
+            <li key={`${item.name}-${index}`} className={CSS.typetItem}>
               <label>
                 <input
                   type="radio"
                   name="vehicleType"
                   className={CSS.radioBtn}
                   value={item.name}
-                  checked={isItemChecked(item.value)}
+                  checked={selectedVehicleType === item.value}
                   onChange={() => handleRadioChange(item.value)}
                 />
               </label>
@@ -82,7 +112,14 @@ const Filter = () => {
           ))}
         </ul>
       </div>
-      <button className={CSS.searchBtn}>Search</button>
+      <div className={CSS.btnContainer}>
+        <button className={CSS.searchBtn} onClick={handleSearch}>
+          Search
+        </button>
+        <button className={CSS.searchBtn} onClick={resetFilters}>
+          Reset
+        </button>
+      </div>
     </div>
   );
 };

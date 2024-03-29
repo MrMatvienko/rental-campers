@@ -2,16 +2,12 @@ import React, { useState } from 'react';
 import CSS from './CamperList.module.css';
 
 import CamperItem from './CamperItem/CamperItem';
-import { useSelector } from 'react-redux';
-import { selectCamperData } from '../../redux/campers/selectors';
 import Loader from 'componets/Loader/Loader';
 
-const CamperList = ({ toggleModal }) => {
-  const camperData = useSelector(selectCamperData);
+const CamperList = ({ toggleModal, camperData }) => {
   const [visibleCamperCount, setVisibleCamperCount] = useState(4);
 
   const favoritesCamperData = camperData.slice(0, visibleCamperCount);
-
   const loadMoreCamper = () => {
     setVisibleCamperCount(prevCount => prevCount + 4);
   };

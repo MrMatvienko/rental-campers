@@ -58,9 +58,9 @@
   border: 1px solid var(--button);
 }
 
-.radioBtn {
+/* .radioBtn {
   display: none;
-}
+} */
 
 .textIcon {
   font-weight: 500;
@@ -117,9 +117,9 @@
   cursor: pointer;
 }
 
-.checkBox {
+/* .checkBox {
   display: none;
-}
+} */
 .equipmentItem:hover {
   border: 1px solid var(--button);
 }
@@ -139,4 +139,8 @@
 
 .checked {
   border: 1px solid var(--button);
+}
+.btnContainer {
+  display: flex;
+  gap: 20px;
 }

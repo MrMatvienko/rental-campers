@@ -1,4 +1,4 @@
-export const EQUIPMEN_TDATA = [
+export const EQUIPMENT_DATA = [
   {
     name: 'airConditioner',
     icon: 'icon-ac',
