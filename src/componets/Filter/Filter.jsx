@@ -46,14 +46,17 @@ const Filter = ({ onFilter }) => {
   return (
     <div className={CSS.filterContainer}>
       <div>
-        <form id="locationForm">
-          <label htmlFor="location">Location</label>
+        <form id="locationForm" className={CSS.locationContaonerForm}>
+          <label htmlFor="location" className={CSS.locationContaonerLabel}>
+            Location
+          </label>
           <select
             id={`location-selector`}
             name={`location-field`}
             defaultValue=""
             color="var(--accent-red)"
             onChange={handleLocationChange}
+            className={CSS.selectLabel}
           >
             <option value="" disabled>
               Location
@@ -94,7 +97,7 @@ const Filter = ({ onFilter }) => {
         <ul className={CSS.typetList}>
           {VACHICLE_DATA.map((item, index) => (
             <li key={`${item.name}-${index}`} className={CSS.typetItem}>
-              <label>
+              <label className={CSS.labelCheckbox}>
                 <input
                   type="radio"
                   name="vehicleType"
@@ -103,11 +106,11 @@ const Filter = ({ onFilter }) => {
                   checked={selectedVehicleType === item.value}
                   onChange={() => handleRadioChange(item.value)}
                 />
+                <svg className={CSS.iconType}>
+                  <use href={`${sprite}#${item.icon}`} />
+                </svg>
+                <p className={CSS.textIcon}>{item.text}</p>
               </label>
-              <svg className={CSS.iconType}>
-                <use href={`${sprite}#${item.icon}`} />
-              </svg>
-              <p className={CSS.textIcon}>{item.text}</p>
             </li>
           ))}
         </ul>

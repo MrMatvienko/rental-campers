@@ -57,11 +57,11 @@ export const VACHICLE_DATA = [
 ];
 
 export const LOCATION_DATA = [
-  { name: 'location', label: 'Kyiv', value: 'Ukraine, Kyiv' },
-  { name: 'location', label: 'Lviv', value: 'Ukraine, Lviv' },
-  { name: 'location', label: 'Odesa', value: 'Ukraine, Odesa' },
-  { name: 'location', label: 'Poltava', value: 'Ukraine, Poltava' },
-  { name: 'location', label: 'Dnipro', value: 'Ukraine, Dnipro' },
-  { name: 'location', label: 'Kharkiv', value: 'Ukraine, Kharkiv' },
-  { name: 'location', label: 'Sumy', value: 'Ukraine, Sumy' },
+  { name: 'location', label: 'Kyiv, Ukraine', value: 'Ukraine, Kyiv' },
+  { name: 'location', label: 'Lviv, Ukraine', value: 'Ukraine, Lviv' },
+  { name: 'location', label: 'Odesa, Ukraine', value: 'Ukraine, Odesa' },
+  { name: 'location', label: 'Poltava, Ukraine', value: 'Ukraine, Poltava' },
+  { name: 'location', label: 'Dnipro, Ukraine', value: 'Ukraine, Dnipro' },
+  { name: 'location', label: 'Kharkiv, Ukraine', value: 'Ukraine, Kharkiv' },
+  { name: 'location', label: 'Sumy, Ukraine', value: 'Ukraine, Sumy' },
 ];

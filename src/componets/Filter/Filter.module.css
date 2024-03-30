@@ -1,6 +1,32 @@
 .filterContainer {
   max-width: 360px;
 }
+
+.locationContaonerLabel {
+  display: flex;
+  flex-direction: column;
+}
+.selectLabel {
+  border-radius: 10px;
+  padding: 18px 218px 18px 18px;
+  width: 360px;
+  height: 56px;
+  background: var(--inputs);
+  border: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.iconMap {
+  width: 18px;
+  height: 20px;
+  /* position: absolute; */
+  /* top: 45px;
+  left: 15px;
+  fill: none;
+  z-index: 1; */
+}
 .searchBtn {
   margin-top: 64px;
   border-radius: 200px;
@@ -58,9 +84,9 @@
   border: 1px solid var(--button);
 }
 
-/* .radioBtn {
+.radioBtn {
   display: none;
-} */
+}
 
 .textIcon {
   font-weight: 500;
@@ -117,9 +143,9 @@
   cursor: pointer;
 }
 
-/* .checkBox {
+.checkBox {
   display: none;
-} */
+}
 .equipmentItem:hover {
   border: 1px solid var(--button);
 }
