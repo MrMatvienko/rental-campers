@@ -43,7 +43,7 @@ const CamperItem = ({ camper, toggleModal }) => {
         <div className={CSS.info1}>
           <p className={CSS.fistLineInfo}>{camper.name}</p>
           <div className={CSS.priceHeart}>
-            <p className={CSS.fistLineInfo}>€{camper.price}</p>
+            <p className={CSS.fistLineInfo}>€{camper.price}.00</p>
             <svg
               className={CSS.icon}
               onClick={handleHeartClick}
@@ -62,7 +62,10 @@ const CamperItem = ({ camper, toggleModal }) => {
           </svg>
           <p>{camper.rating}</p>
           <p>({camper.reviews.length} Reviews)</p>
-          <p style={{ marginLeft: '16px' }}>{camper.location}</p>
+          <svg style={{ marginLeft: '16px' }} className={CSS.iconList}>
+            <use href={sprite + '#icon-map-pin'} />
+          </svg>
+          <p>{camper.location}</p>
         </div>
         <p className={CSS.description}>{text}...</p>
         <ul className={CSS.listDateils}>

@@ -1,6 +1,7 @@
 import CSS from './Modal.module.css';
 import sprite from '../../assets/images/sprite.svg';
 import { useEffect } from 'react';
+import Features from 'componets/Features/Features';
 const Modal = ({ camper, onClose }) => {
   useEffect(() => {
     const handleKeyDown = event => {
@@ -50,6 +51,7 @@ const Modal = ({ camper, onClose }) => {
           <p>Features</p>
           <p>Reviews</p>
         </div>
+        <Features camper={camper} />
       </div>
     </>
   );
