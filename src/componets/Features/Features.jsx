@@ -69,7 +69,7 @@ const Features = ({ camper }) => {
           )}
         </ul>
         <div>
-          <p>Vehicle details</p>
+          <p className={CSS.featuresTitle_1}>Vehicle details</p>
           <ul className={CSS.vehicleList}>
             <li className={CSS.vehicleItem}>
               <p>Form</p>
@@ -101,13 +101,18 @@ const Features = ({ camper }) => {
       <div className={CSS.sendForm}>
         <p>Book your campervan now</p>
         <p>Stay connected! We are always ready to help you.</p>
-        <form>
+        <form className={CSS.formContainer}>
           <input className={CSS.inputSend} type="text" placeholder="Name" />
           <input className={CSS.inputSend} type="email" placeholder="Email" />
           <input className={CSS.inputSend} type="date" placeholder="Date" />
-          <textarea className={CSS.inputSend} placeholder="Comment"></textarea>
+          <textarea
+            className={CSS.inputSendTextarea}
+            placeholder="Comment"
+          ></textarea>
         </form>
-        <button type="submit">Send</button>
+        <button type="submit" className={CSS.sendBtn}>
+          Send
+        </button>
       </div>
     </div>
   );

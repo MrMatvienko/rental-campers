@@ -23,7 +23,6 @@ const Filter = ({ onFilter }) => {
         ...prevState,
         [name]: checked,
       };
-      console.log('Updated selectedEquipmentType:', updatedState);
       return updatedState;
     });
   };
@@ -40,7 +39,7 @@ const Filter = ({ onFilter }) => {
   const resetFilters = () => {
     setSelectedLocation('');
     setSelectedVehicleType('');
-    setSelectedEquipmentType({});
+    setSelectedEquipmentType('');
   };
 
   return (

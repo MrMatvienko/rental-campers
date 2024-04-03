@@ -10,6 +10,8 @@ const Rental = () => {
   const dispatch = useDispatch();
   const camperData = useSelector(selectCamperData);
   const [filteredCampers, setFilteredCampers] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedCamper, setSelectedCamper] = useState(null);
 
   const handleFilter = (location, vehicleType, equipmentType) => {
     let filtered = camperData;
@@ -43,9 +45,6 @@ const Rental = () => {
   useEffect(() => {
     setFilteredCampers(camperData);
   }, [camperData]);
-
-  const [showModal, setShowModal] = useState(false);
-  const [selectedCamper, setSelectedCamper] = useState(null);
 
   const toggleModal = camper => {
     setSelectedCamper(camper);

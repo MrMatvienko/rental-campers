@@ -1,8 +1,9 @@
 import CSS from './Modal.module.css';
 import sprite from '../../assets/images/sprite.svg';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Features from 'componets/Features/Features';
 const Modal = ({ camper, onClose }) => {
+  const [activeTab, setActiveTab] = useState();
   useEffect(() => {
     const handleKeyDown = event => {
       if (event.key === 'Escape') {
@@ -19,6 +20,9 @@ const Modal = ({ camper, onClose }) => {
     if (event.target === event.currentTarget) {
       onClose();
     }
+  };
+  const handleTabClick = tab => {
+    setActiveTab(tab);
   };
 
   return (
@@ -48,10 +52,15 @@ const Modal = ({ camper, onClose }) => {
         </div>
         <p className={CSS.description}>{camper.description}</p>
         <div className={CSS.infoContainer}>
-          <p>Features</p>
+          <p
+            onClick={() => handleTabClick('Features')}
+            className={activeTab === 'Features' ? CSS.activeTab : ''}
+          >
+            Features
+          </p>
           <p>Reviews</p>
         </div>
-        <Features camper={camper} />
+        {activeTab === 'Features' && <Features camper={camper} />}
       </div>
     </>
   );
