@@ -1,5 +1,6 @@
 import CSS from './Features.module.css';
 import sprite from '../../assets/images/sprite.svg';
+import SendForm from 'componets/SendForm/SendForm';
 const Features = ({ camper }) => {
   const {
     adults,
@@ -98,22 +99,7 @@ const Features = ({ camper }) => {
           </ul>
         </div>
       </div>
-      <div className={CSS.sendForm}>
-        <p>Book your campervan now</p>
-        <p>Stay connected! We are always ready to help you.</p>
-        <form className={CSS.formContainer}>
-          <input className={CSS.inputSend} type="text" placeholder="Name" />
-          <input className={CSS.inputSend} type="email" placeholder="Email" />
-          <input className={CSS.inputSend} type="date" placeholder="Date" />
-          <textarea
-            className={CSS.inputSendTextarea}
-            placeholder="Comment"
-          ></textarea>
-        </form>
-        <button type="submit" className={CSS.sendBtn}>
-          Send
-        </button>
-      </div>
+      <SendForm />
     </div>
   );
 };

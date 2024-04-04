@@ -2,6 +2,7 @@ import CSS from './Modal.module.css';
 import sprite from '../../assets/images/sprite.svg';
 import { useEffect, useState } from 'react';
 import Features from 'componets/Features/Features';
+import Reviews from 'Reviews/Reviews';
 const Modal = ({ camper, onClose }) => {
   const [activeTab, setActiveTab] = useState();
   useEffect(() => {
@@ -54,13 +55,27 @@ const Modal = ({ camper, onClose }) => {
         <div className={CSS.infoContainer}>
           <p
             onClick={() => handleTabClick('Features')}
-            className={activeTab === 'Features' ? CSS.activeTab : ''}
+            className={`${
+              activeTab === 'Features'
+                ? `${CSS.activeTab} ${CSS.features}`
+                : CSS.features
+            } ${activeTab === 'Features' ? CSS.current : ''}`}
           >
             Features
           </p>
-          <p>Reviews</p>
+          <p
+            onClick={() => handleTabClick('Reviews')}
+            className={`${
+              activeTab === 'Reviews'
+                ? `${CSS.activeTab} ${CSS.features}`
+                : CSS.features
+            } ${activeTab === 'Reviews' ? CSS.current : ''}`}
+          >
+            Reviews
+          </p>
         </div>
         {activeTab === 'Features' && <Features camper={camper} />}
+        {activeTab === 'Reviews' && <Reviews camper={camper} />}
       </div>
     </>
   );

@@ -65,7 +65,22 @@
   border-bottom: 1px solid rgba(16, 24, 40, 0.1);
   margin-top: 44px;
 }
-.activeTab {
+.features {
   cursor: pointer;
   font-weight: bold;
+  margin-bottom: 24px;
+}
+.current {
+  position: relative;
+}
+.current::after {
+  content: '';
+  position: absolute;
+  display: block;
+  left: 0;
+  bottom: -24px;
+  height: 5px;
+  width: 100%;
+  background-color: var(--button);
+  border-radius: 2px;
 }
