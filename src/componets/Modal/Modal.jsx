@@ -37,10 +37,23 @@ const Modal = ({ camper, onClose }) => {
           </svg>
         </div>
         <div className={CSS.secondLine}>
-          <p> {camper.rating}</p>
-          <p> {camper.location}</p>
+          <div className={CSS.ratingModal}>
+            <svg width={20} height={20} fill="var(--rating)">
+              <use href={sprite + '#icon-star'} />
+            </svg>
+            <div className={CSS.currentLine}>
+              <p> {camper.rating}</p>
+              <p>({camper.reviews.length} Reviews)</p>
+            </div>
+          </div>
+          <div className={CSS.locationWrap}>
+            <svg width={20} height={20}>
+              <use href={sprite + '#icon-map-pin'} />
+            </svg>
+            <p> {camper.location}</p>
+          </div>
         </div>
-        <p> €{camper.price}</p>
+        <p className={CSS.priceText}> €{camper.price}</p>
         <div className={CSS.imageContainer}>
           {camper.gallery.map((image, index) => (
             <img

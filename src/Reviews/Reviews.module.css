@@ -6,3 +6,47 @@
 .reviewsElement {
   max-width: 430px;
 }
+.reviewsItem {
+  margin-bottom: 24px;
+}
+.nameContainer {
+  max-width: 172px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+.circleContainer {
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+  background: var(--block-features);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  color: var(--button);
+}
+.ratingCont {
+  display: flex;
+  flex-direction: column;
+}
+.name {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 133%;
+  color: var(--main);
+}
+.starList {
+  display: flex;
+}
+.commentText {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text);
+}

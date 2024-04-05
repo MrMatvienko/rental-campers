@@ -31,8 +31,17 @@
   width: 20px;
   height: 20px;
 }
-.featuresTitle_1 {
+.titleWrap {
+  height: 44px;
   border-bottom: 1px solid rgba(16, 24, 40, 0.1);
+  margin-bottom: 24px;
+}
+.featuresTitle_1 {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--main);
 }
 .vehicleList {
   display: flex;
@@ -43,6 +52,15 @@
 .vehicleItem {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 0px;
+}
+.formText {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.33;
+  color: var(--main);
 }
 .sendForm {
   border: 1px solid rgba(16, 24, 40, 0.2);

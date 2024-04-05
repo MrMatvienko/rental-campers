@@ -6,6 +6,22 @@
   padding: 24px;
   width: 448px;
 }
+.title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--main);
+  margin-bottom: 8px;
+}
+.text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text);
+  margin-bottom: 24px;
+}
 .formContainer {
   display: flex;
   flex-direction: column;

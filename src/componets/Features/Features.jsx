@@ -70,31 +70,34 @@ const Features = ({ camper }) => {
           )}
         </ul>
         <div>
-          <p className={CSS.featuresTitle_1}>Vehicle details</p>
+          <div className={CSS.titleWrap}>
+            <p className={CSS.featuresTitle_1}>Vehicle details</p>
+          </div>
+
           <ul className={CSS.vehicleList}>
             <li className={CSS.vehicleItem}>
-              <p>Form</p>
-              <p>{form}</p>
+              <p className={CSS.formText}>Form</p>
+              <p className={CSS.formText}>{form}</p>
             </li>
             <li className={CSS.vehicleItem}>
-              <p>Length</p>
-              <p>{length}</p>
+              <p className={CSS.formText}>Length</p>
+              <p className={CSS.formText}>{length}</p>
             </li>
             <li className={CSS.vehicleItem}>
-              <p>Width</p>
-              <p>{width}</p>
+              <p className={CSS.formText}>Width</p>
+              <p className={CSS.formText}>{width}</p>
             </li>
             <li className={CSS.vehicleItem}>
-              <p>Height</p>
-              <p>{height}</p>
+              <p className={CSS.formText}>Height</p>
+              <p className={CSS.formText}>{height}</p>
             </li>
             <li className={CSS.vehicleItem}>
-              <p>Tank</p>
-              <p>{tank}</p>
+              <p className={CSS.formText}>Tank</p>
+              <p className={CSS.formText}>{tank}</p>
             </li>
             <li className={CSS.vehicleItem}>
-              <p>Consumption</p>
-              <p>{consumption}</p>
+              <p className={CSS.formText}>Consumption</p>
+              <p className={CSS.formText}>{consumption}</p>
             </li>
           </ul>
         </div>
