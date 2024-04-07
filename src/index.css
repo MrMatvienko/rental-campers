@@ -33,3 +33,13 @@ ul li a {
   --text: #475467;
   --font-family: 'Inter', sans-serif;
 }
+body::-webkit-scrollbar {
+  width: 6px; /* Ширина скроллбара */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(214, 5, 5, 0.6);
+  border-radius: 4px;
+}
+body::-webkit-scrollbar-track {
+  border-radius: 50px;
+}

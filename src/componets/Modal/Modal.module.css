@@ -8,11 +8,22 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   padding: 40px;
-  width: 982px;
+  max-width: 982px;
   background: #fff;
   max-height: 600px;
   z-index: 1000;
   overflow-y: auto;
+}
+.modalContainer::-webkit-scrollbar {
+  width: 4px; /* Ширина скроллбара */
+}
+.modalContainer::-webkit-scrollbar-thumb {
+  background-color: rgba(214, 5, 5, 0.6);
+  border-radius: 4px;
+}
+.modalContainer::-webkit-scrollbar-track {
+  border-radius: 50px;
+  margin: 25px 0;
 }
 .modalBackdrop {
   position: fixed;
@@ -21,7 +32,7 @@
   width: 100%;
   height: 100%;
   background: rgba(17, 18, 19, 0.4);
-  z-index: 999;
+  z-index: 500;
 }
 .title {
   margin: 0;
@@ -29,12 +40,14 @@
 .icon {
   width: 32px;
   height: 32px;
+  cursor: pointer;
 }
 .firstLine {
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: var(--main);
+  margin-bottom: 10px;
 }
 .secondLine {
   display: flex;

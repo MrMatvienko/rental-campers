@@ -53,7 +53,7 @@ const Modal = ({ camper, onClose }) => {
             <p> {camper.location}</p>
           </div>
         </div>
-        <p className={CSS.priceText}> €{camper.price}</p>
+        <p className={CSS.priceText}> €{camper.price}.00</p>
         <div className={CSS.imageContainer}>
           {camper.gallery.map((image, index) => (
             <img
