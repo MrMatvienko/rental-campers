@@ -23,7 +23,7 @@
   width: 100px;
   height: 80px;
   border-radius: 50%;
-  background-color: aliceblue;
+  background-color: var(--button);
   cursor: pointer;
   text-decoration: none;
 }

@@ -1,7 +1,7 @@
 .reviewsConrainer {
   margin-top: 44px;
   display: flex;
-  justify-content: space-between;
+  gap: 24px;
 }
 .reviewsElement {
   max-width: 430px;

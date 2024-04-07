@@ -1,7 +1,7 @@
 .featuresContainer {
   margin-top: 44px;
   display: flex;
-  justify-content: space-between;
+  gap: 24px;
 }
 .camperDetailsInfo {
   flex-direction: column;
