@@ -27,6 +27,11 @@
   cursor: pointer;
   text-decoration: none;
   color: var(--main);
+  transition: width 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    height 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    font-size 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .rentalButton:hover,
 .rentalButton:focus {
@@ -34,10 +39,5 @@
   height: 100px;
   font-size: 26px;
   color: var(--white);
-  background-color: #d45858;
-  transition: width 500ms cubic-bezier(0.4, 0, 0.2, 1),
-    height 500ms cubic-bezier(0.4, 0, 0.2, 1),
-    font-size 500ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 500ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #741d1d;
 }
