@@ -1,6 +1,6 @@
 import SendForm from 'componets/SendForm/SendForm';
 import CSS from './Reviews.module.css';
-import sprite from '../assets/images/sprite.svg';
+import sprite from '../../assets/images/sprite.svg';
 const Reviews = ({ camper }) => {
   const { reviews } = camper;
 

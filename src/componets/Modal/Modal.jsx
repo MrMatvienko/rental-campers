@@ -2,7 +2,7 @@ import CSS from './Modal.module.css';
 import sprite from '../../assets/images/sprite.svg';
 import { useEffect, useState } from 'react';
 import Features from 'componets/Features/Features';
-import Reviews from 'Reviews/Reviews';
+import Reviews from 'componets/Reviews/Reviews';
 const Modal = ({ camper, onClose }) => {
   const [activeTab, setActiveTab] = useState();
   useEffect(() => {

@@ -6,8 +6,11 @@ import {
   addToFavorites,
   removeFromFavorites,
 } from '../../../redux/campers/slice';
-const CamperItem = ({ camper, toggleModal }) => {
+import Modal from 'componets/Modal/Modal';
+const CamperItem = ({ camper }) => {
   const [heartColor, setHeartColor] = useState('#FFFFFF');
+  const [showModal, setShowModal] = useState(false);
+  const [selectedCamper, setSelectedCamper] = useState(null);
   const dispatch = useDispatch();
   const favorites = useSelector(state => state.camper.favorites);
 
@@ -24,6 +27,14 @@ const CamperItem = ({ camper, toggleModal }) => {
       setHeartColor('#FF0000');
     }
   }, [camper._id, favorites]);
+
+  const toggleModal = camper => {
+    setSelectedCamper(camper);
+    setShowModal(!showModal);
+  };
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
   const handleHeartClick = () => {
     const newColor = heartColor === '#FF0000' ? '#FFFFFF' : '#FF0000';
@@ -128,6 +139,7 @@ const CamperItem = ({ camper, toggleModal }) => {
         >
           Show more
         </button>
+        {showModal && <Modal camper={selectedCamper} onClose={closeModal} />}
       </div>
     </div>
   );

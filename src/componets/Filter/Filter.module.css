@@ -36,11 +36,6 @@
 .iconMap {
   width: 18px;
   height: 20px;
-  /* position: absolute; */
-  /* top: 45px;
-  left: 15px;
-  fill: none;
-  z-index: 1; */
 }
 .searchBtn {
   margin-top: 64px;
@@ -50,7 +45,7 @@
   width: 173px;
   height: 56px;
   background: var(--button);
-  color: #fff;
+  color: var(--white);
   cursor: pointer;
 }
 
@@ -99,9 +94,9 @@
   border: 1px solid var(--button);
 }
 
-.radioBtn {
+/* .radioBtn {
   display: none;
-}
+} */
 
 .textIcon {
   font-weight: 500;
@@ -112,7 +107,7 @@
 
 .equiContainer {
   width: 360px;
-  height: 270px;
+  margin-bottom: 35px;
 }
 
 .titleType {
@@ -147,6 +142,7 @@
   height: 95px;
   width: calc((100% - 30px) / 3);
   cursor: pointer;
+  transition: border-color 0.5s ease;
 }
 .labelCheckbox {
   width: 100%;
@@ -156,14 +152,12 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  border-radius: 10px;
 }
 
-.checkBox {
+/* .checkBox {
   display: none;
-}
-.equipmentItem:hover {
-  border: 1px solid var(--button);
-}
+} */
 
 .equipmentItem {
   position: relative;
@@ -178,7 +172,13 @@
   cursor: pointer;
 }
 
-.checked {
+.equipmentItem:hover {
+  border: 1px solid var(--button);
+}
+/* .checked {
+  border: 1px solid var(--button);
+} */
+input:checked + .labelCheckbox + .equipmentItem {
   border: 1px solid var(--button);
 }
 .btnContainer {

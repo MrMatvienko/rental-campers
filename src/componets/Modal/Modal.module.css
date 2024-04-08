@@ -15,7 +15,7 @@
   overflow-y: auto;
 }
 .modalContainer::-webkit-scrollbar {
-  width: 4px; /* Ширина скроллбара */
+  width: 4px;
 }
 .modalContainer::-webkit-scrollbar-thumb {
   background-color: rgba(214, 5, 5, 0.6);
@@ -40,7 +40,15 @@
 .icon {
   width: 32px;
   height: 32px;
+  border-radius: 50%;
   cursor: pointer;
+  transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.icon:hover,
+.icon:focus {
+  background-color: rgba(236, 133, 155, 0.3);
+  border-radius: 50%;
+  transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .firstLine {
   display: flex;

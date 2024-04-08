@@ -10,7 +10,7 @@ import { useState } from 'react';
 const Filter = ({ onFilter, resetFilters }) => {
   const [selectedLocation, setSelectedLocation] = useState('');
   const [selectedVehicleType, setSelectedVehicleType] = useState('');
-  const [selectedEquipmentType, setSelectedEquipmentType] = useState('');
+  const [selectedEquipmentType, setSelectedEquipmentType] = useState({});
 
   const handleLocationChange = event => {
     setSelectedLocation(event.target.value);
@@ -34,6 +34,15 @@ const Filter = ({ onFilter, resetFilters }) => {
   const handleSearch = event => {
     event.preventDefault();
     onFilter(selectedLocation, selectedVehicleType, selectedEquipmentType);
+  };
+
+  const resetFiltersHandler = () => {
+    setSelectedLocation('');
+    setSelectedVehicleType('');
+    setSelectedEquipmentType({});
+    if (resetFilters) {
+      resetFilters();
+    }
   };
 
   return (
@@ -112,7 +121,7 @@ const Filter = ({ onFilter, resetFilters }) => {
         <button className={CSS.searchBtn} onClick={handleSearch}>
           Search
         </button>
-        <button className={CSS.searchBtn} onClick={resetFilters}>
+        <button className={CSS.searchBtn} onClick={resetFiltersHandler}>
           Reset
         </button>
       </div>

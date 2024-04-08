@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import Filter from '../../componets/Filter/Filter';
-import Modal from '../../componets/Modal/Modal';
 import CSS from './Rental.module.css';
 import CamperList from '../../componets/CamperList/CamperList';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,8 +9,6 @@ const Rental = () => {
   const dispatch = useDispatch();
   const camperData = useSelector(selectCamperData);
   const [filteredCampers, setFilteredCampers] = useState([]);
-  const [showModal, setShowModal] = useState(false);
-  const [selectedCamper, setSelectedCamper] = useState(null);
 
   const handleFilter = (location, vehicleType, equipmentType) => {
     let filtered = camperData;
@@ -50,19 +47,10 @@ const Rental = () => {
     setFilteredCampers(camperData);
   }, [camperData]);
 
-  const toggleModal = camper => {
-    setSelectedCamper(camper);
-    setShowModal(!showModal);
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
-  };
   return (
     <div className={CSS.rentalContainer}>
       <Filter resetFilters={resetFilters} onFilter={handleFilter} />
-      <CamperList toggleModal={toggleModal} camperData={filteredCampers} />
-      {showModal && <Modal camper={selectedCamper} onClose={closeModal} />}
+      <CamperList camperData={filteredCampers} />
     </div>
   );
 };
