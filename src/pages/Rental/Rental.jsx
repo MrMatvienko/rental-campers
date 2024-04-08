@@ -38,6 +38,10 @@ const Rental = () => {
     setFilteredCampers(filtered);
   };
 
+  const resetFilters = () => {
+    setFilteredCampers(camperData);
+  };
+
   useEffect(() => {
     dispatch(fetchCamperData());
   }, [dispatch]);
@@ -56,7 +60,7 @@ const Rental = () => {
   };
   return (
     <div className={CSS.rentalContainer}>
-      <Filter onFilter={handleFilter} />
+      <Filter resetFilters={resetFilters} onFilter={handleFilter} />
       <CamperList toggleModal={toggleModal} camperData={filteredCampers} />
       {showModal && <Modal camper={selectedCamper} onClose={closeModal} />}
     </div>

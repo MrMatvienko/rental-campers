@@ -8,11 +8,15 @@ const Favorites = () => {
   return (
     <div className={CSS.favoritesContainer}>
       <h2>Favorites camper</h2>
-      <div>
-        {favorites.map(camper => (
-          <CamperItem key={camper._id} camper={camper} />
-        ))}
-      </div>
+      {favorites.length === 0 ? (
+        <p className={CSS.text}>Your favorites list is empty...</p>
+      ) : (
+        <div>
+          {favorites.map(camper => (
+            <CamperItem key={camper._id} camper={camper} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

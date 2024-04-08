@@ -2,17 +2,17 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background-image: linear-gradient(
-      rgba(46, 47, 66, 0.4),
-      rgba(46, 47, 66, 0.8)
+      rgba(46, 47, 66, 0.1),
+      rgba(48, 47, 80, 0.6)
     ),
     url(../../assets/images/TB_Van_18-1536x10241.jpgw3.jpg);
 }
 .title {
+  margin-top: 200px;
   font-size: 56px;
-  color: rgb(246, 247, 248);
+  color: var(--white);
 }
 .rentalButton {
   font-size: 20px;
@@ -26,10 +26,18 @@
   background-color: var(--button);
   cursor: pointer;
   text-decoration: none;
+  color: var(--main);
 }
 .rentalButton:hover,
 .rentalButton:focus {
-  color: aliceblue;
-  background-color: rgb(76, 172, 216);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 120px;
+  height: 100px;
+  font-size: 26px;
+  color: var(--white);
+  background-color: #d45858;
+  transition: width 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    height 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    font-size 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }

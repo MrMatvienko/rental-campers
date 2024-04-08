@@ -7,7 +7,7 @@ import {
 } from '../../constants/index';
 import { useState } from 'react';
 
-const Filter = ({ onFilter }) => {
+const Filter = ({ onFilter, resetFilters }) => {
   const [selectedLocation, setSelectedLocation] = useState('');
   const [selectedVehicleType, setSelectedVehicleType] = useState('');
   const [selectedEquipmentType, setSelectedEquipmentType] = useState('');
@@ -36,12 +36,6 @@ const Filter = ({ onFilter }) => {
     onFilter(selectedLocation, selectedVehicleType, selectedEquipmentType);
   };
 
-  const resetFilters = () => {
-    setSelectedLocation('');
-    setSelectedVehicleType('');
-    setSelectedEquipmentType('');
-  };
-
   return (
     <div className={CSS.filterContainer}>
       <div>
@@ -58,7 +52,7 @@ const Filter = ({ onFilter }) => {
             className={CSS.selectLabel}
           >
             <option value="" disabled>
-              Location
+              Select location
             </option>
             {LOCATION_DATA.map((location, index) => (
               <option key={`${location.value}-${index}`} value={location.value}>
@@ -69,7 +63,7 @@ const Filter = ({ onFilter }) => {
         </form>
       </div>
       <div className={CSS.equiContainer}>
-        <p>Filters</p>
+        <p className={CSS.filterTitle}>Filters</p>
         <h2 className={CSS.titleType}>Vehicle equipment</h2>
         <ul className={CSS.equipmentList}>
           {EQUIPMENT_DATA.map((filter, index) => (
