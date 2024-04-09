@@ -33,7 +33,10 @@
   background: var(--inputs);
   border: none;
   margin-bottom: 14px;
+  padding-left: 18px;
+  padding-right: 18px;
 }
+
 .inputSendTextarea {
   border-radius: 10px;
   max-width: 430px;
@@ -41,7 +44,10 @@
   background: var(--inputs);
   margin-bottom: 14px;
   border: none;
+  padding-left: 18px;
+  padding-top: 18px;
 }
+
 .sendBtn {
   font-weight: 500;
   font-size: 16px;

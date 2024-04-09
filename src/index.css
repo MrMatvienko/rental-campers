@@ -32,10 +32,11 @@ ul li a {
   --rating: #ffc531;
   --text: #475467;
   --white: #ffff;
+  --loadmore: #f7dddd;
   --font-family: 'Inter', sans-serif;
 }
 body::-webkit-scrollbar {
-  width: 6px; /* Ширина скроллбара */
+  width: 6px;
 }
 body::-webkit-scrollbar-thumb {
   background-color: rgba(214, 5, 5, 0.6);

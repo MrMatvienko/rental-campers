@@ -1,9 +1,9 @@
 .headerContainer {
   display: flex;
   text-align: center;
-  height: 40px;
+  height: 60px;
   margin: 0px auto;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 5px 20px rgba(100, 0, 0, 0.2);
   background-color: var(--button);
 }
 .navigation {
@@ -14,7 +14,7 @@
 }
 
 .navLink {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   color: var(--main);
   transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);

@@ -14,12 +14,6 @@ const Filter = ({ onFilter, resetFilters }) => {
 
   const handleLocationChange = event => {
     setSelectedLocation(event.target.value);
-    const listItem = event.target.closest('li');
-    const radioLabels = listItem.querySelectorAll('.labelRadio');
-    radioLabels.forEach(label => {
-      label.classList.remove('checked');
-    });
-    event.target.closest('label').classList.add('checked');
   };
 
   const handleCheckboxChange = event => {
@@ -30,11 +24,12 @@ const Filter = ({ onFilter, resetFilters }) => {
     }));
 
     const listItem = event.target.closest('li');
-
-    if (checked) {
-      listItem.querySelector('.labelCheckbox').classList.add('checked'); // Додати клас 'checked'
-    } else {
-      listItem.querySelector('.labelCheckbox').classList.remove('checked'); // Видалити клас 'checked'
+    if (listItem) {
+      if (checked) {
+        listItem.classList.add('selected');
+      } else {
+        listItem.classList.remove('selected');
+      }
     }
   };
 

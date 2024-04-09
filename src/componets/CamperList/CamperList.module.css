@@ -18,9 +18,10 @@
   height: 56px;
   background-color: transparent;
   cursor: pointer;
+  transition: background-color 0.5s ease;
 }
 .buttonLoad:hover,
 .buttonLoad:focus {
-  border: 1px solid#f7dddd;
-  background-color: #f7dddd;
+  border: 1px solid var(--loadmore);
+  background-color: var(--loadmore);
 }
