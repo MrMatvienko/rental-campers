@@ -14,17 +14,28 @@ const Filter = ({ onFilter, resetFilters }) => {
 
   const handleLocationChange = event => {
     setSelectedLocation(event.target.value);
+    const listItem = event.target.closest('li');
+    const radioLabels = listItem.querySelectorAll('.labelRadio');
+    radioLabels.forEach(label => {
+      label.classList.remove('checked');
+    });
+    event.target.closest('label').classList.add('checked');
   };
 
-  const handleCheckboxChange = ({ target }) => {
-    const { name, checked } = target;
-    setSelectedEquipmentType(prevState => {
-      const updatedState = {
-        ...prevState,
-        [name]: checked,
-      };
-      return updatedState;
-    });
+  const handleCheckboxChange = event => {
+    const { name, checked } = event.target;
+    setSelectedEquipmentType(prevState => ({
+      ...prevState,
+      [name]: checked,
+    }));
+
+    const listItem = event.target.closest('li');
+
+    if (checked) {
+      listItem.querySelector('.labelCheckbox').classList.add('checked'); // Додати клас 'checked'
+    } else {
+      listItem.querySelector('.labelCheckbox').classList.remove('checked'); // Видалити клас 'checked'
+    }
   };
 
   const handleRadioChange = value => {
@@ -77,7 +88,11 @@ const Filter = ({ onFilter, resetFilters }) => {
         <ul className={CSS.equipmentList}>
           {EQUIPMENT_DATA.map((filter, index) => (
             <li key={`${filter.name}-${index}`} className={CSS.equipmentItem}>
-              <label className={CSS.labelCheckbox}>
+              <label
+                className={`${CSS.labelCheckbox} ${
+                  selectedEquipmentType[filter.text] ? CSS.checked : ''
+                }`}
+              >
                 <input
                   type="checkbox"
                   name={filter.text}
@@ -99,7 +114,11 @@ const Filter = ({ onFilter, resetFilters }) => {
         <ul className={CSS.typetList}>
           {VACHICLE_DATA.map((item, index) => (
             <li key={`${item.name}-${index}`} className={CSS.typetItem}>
-              <label className={CSS.labelCheckbox}>
+              <label
+                className={`${CSS.labelCheckbox} ${
+                  selectedVehicleType === item.value ? CSS.checked : ''
+                }`}
+              >
                 <input
                   type="radio"
                   name="vehicleType"
