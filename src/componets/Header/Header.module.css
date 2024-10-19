@@ -1,10 +1,16 @@
+.container {
+  width: 100vw;
+  background-color: var(--button);
+  box-shadow: 0px 5px 20px rgba(100, 0, 0, 0.2);
+}
 .headerContainer {
   display: flex;
   text-align: center;
+  min-width: 290px;
+  max-width: 1180px;
+  padding: 0px 20px;
   height: 60px;
   margin: 0px auto;
-  box-shadow: 0px 5px 20px rgba(100, 0, 0, 0.2);
-  background-color: var(--button);
 }
 .navigation {
   display: flex;
@@ -25,4 +31,10 @@
 }
 .iconList {
   max-width: 100px;
+}
+@media screen and (min-width: 320px) {
+}
+@media screen and (min-width: 760px) {
+}
+@media screen and (min-width: 1180px) {
 }
