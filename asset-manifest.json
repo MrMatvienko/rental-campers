@@ -1,27 +1,28 @@
 {
   "files": {
-    "main.css": "/rental-campers/static/css/main.37245d06.css",
-    "main.js": "/rental-campers/static/js/main.2978afe5.js",
-    "static/css/936.80e8efa0.chunk.css": "/rental-campers/static/css/936.80e8efa0.chunk.css",
-    "static/js/936.be5ec7f8.chunk.js": "/rental-campers/static/js/936.be5ec7f8.chunk.js",
+    "main.css": "/rental-campers/static/css/main.7b49c5cb.css",
+    "main.js": "/rental-campers/static/js/main.ab4dee80.js",
+    "static/css/936.7db9435a.chunk.css": "/rental-campers/static/css/936.7db9435a.chunk.css",
+    "static/js/936.3f6f9848.chunk.js": "/rental-campers/static/js/936.3f6f9848.chunk.js",
     "static/css/796.ea90b90c.chunk.css": "/rental-campers/static/css/796.ea90b90c.chunk.css",
     "static/js/796.b43768b5.chunk.js": "/rental-campers/static/js/796.b43768b5.chunk.js",
     "static/css/966.3a1dd76e.chunk.css": "/rental-campers/static/css/966.3a1dd76e.chunk.css",
     "static/js/966.d9fccf55.chunk.js": "/rental-campers/static/js/966.d9fccf55.chunk.js",
     "static/media/TB_Van_18-1536x10241.jpgw3.jpg": "/rental-campers/static/media/TB_Van_18-1536x10241.jpgw3.3e92b81835f6fe9c5253.jpg",
+    "static/media/TB_Van_18-1536x1024111.jpgw3.jpg": "/rental-campers/static/media/TB_Van_18-1536x1024111.jpgw3.84cd986d775e34c03762.jpg",
     "static/media/sprite.svg": "/rental-campers/static/media/sprite.ddc68216b36cb3b4548ee571304de3f9.svg",
     "index.html": "/rental-campers/index.html",
-    "main.37245d06.css.map": "/rental-campers/static/css/main.37245d06.css.map",
-    "main.2978afe5.js.map": "/rental-campers/static/js/main.2978afe5.js.map",
-    "936.80e8efa0.chunk.css.map": "/rental-campers/static/css/936.80e8efa0.chunk.css.map",
-    "936.be5ec7f8.chunk.js.map": "/rental-campers/static/js/936.be5ec7f8.chunk.js.map",
+    "main.7b49c5cb.css.map": "/rental-campers/static/css/main.7b49c5cb.css.map",
+    "main.ab4dee80.js.map": "/rental-campers/static/js/main.ab4dee80.js.map",
+    "936.7db9435a.chunk.css.map": "/rental-campers/static/css/936.7db9435a.chunk.css.map",
+    "936.3f6f9848.chunk.js.map": "/rental-campers/static/js/936.3f6f9848.chunk.js.map",
     "796.ea90b90c.chunk.css.map": "/rental-campers/static/css/796.ea90b90c.chunk.css.map",
     "796.b43768b5.chunk.js.map": "/rental-campers/static/js/796.b43768b5.chunk.js.map",
     "966.3a1dd76e.chunk.css.map": "/rental-campers/static/css/966.3a1dd76e.chunk.css.map",
     "966.d9fccf55.chunk.js.map": "/rental-campers/static/js/966.d9fccf55.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.37245d06.css",
-    "static/js/main.2978afe5.js"
+    "static/css/main.7b49c5cb.css",
+    "static/js/main.ab4dee80.js"
   ]
 }
