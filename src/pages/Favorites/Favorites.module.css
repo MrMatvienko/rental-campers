@@ -1,5 +1,7 @@
 .favoritesContainer {
-  padding: 40px 80px 40px 80px;
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 64px 30px;
 }
 .text {
   font-size: 18px;

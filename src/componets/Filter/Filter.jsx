@@ -53,30 +53,29 @@ const Filter = ({ onFilter, resetFilters }) => {
 
   return (
     <div className={CSS.filterContainer}>
-      <div>
-        <form id="locationForm" className={CSS.locationContaonerForm}>
-          <label htmlFor="location" className={CSS.locationContaonerLabel}>
-            Location
-          </label>
-          <select
-            id={`location-selector`}
-            name={`location-field`}
-            defaultValue=""
-            color="var(--accent-red)"
-            onChange={handleLocationChange}
-            className={CSS.selectLabel}
-          >
-            <option value="" disabled>
-              Select location
+      <form id="locationForm" className={CSS.locationContaonerForm}>
+        <label htmlFor="location" className={CSS.locationContaonerLabel}>
+          Location
+        </label>
+        <select
+          id={`location-selector`}
+          name={`location-field`}
+          defaultValue=""
+          color="var(--accent-red)"
+          onChange={handleLocationChange}
+          className={CSS.selectLabel}
+        >
+          <option value="" disabled>
+            Select location
+          </option>
+          {LOCATION_DATA.map((location, index) => (
+            <option key={`${location.value}-${index}`} value={location.value}>
+              {location.label}
             </option>
-            {LOCATION_DATA.map((location, index) => (
-              <option key={`${location.value}-${index}`} value={location.value}>
-                {location.label}
-              </option>
-            ))}
-          </select>
-        </form>
-      </div>
+          ))}
+        </select>
+      </form>
+
       <div className={CSS.equiContainer}>
         <p className={CSS.filterTitle}>Filters</p>
         <h2 className={CSS.titleType}>Vehicle equipment</h2>
